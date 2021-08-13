@@ -20,7 +20,7 @@ server:
   port: 8090
   servlet:
     session:
-      timeout: 1800s
+      timeout: 900s
 
 
 # mybatis
