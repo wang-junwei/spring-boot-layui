@@ -1,0 +1,23 @@
+html,
+body {
+    background: #fafafa;
+    overflow: hidden;
+}
+
+.bk-layout {
+    min-height: 500px;
+}
+
+.page-content {
+    /*padding: 20px;*/
+    flex: 1;
+    height: 100%;
+    /*overflow: auto;*/
+    background: #f5f6f7;
+}
+
+@media all and (max-height: 550px) {
+    .copyright {
+        display: none;
+    }
+}

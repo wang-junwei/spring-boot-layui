@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/register.css">
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/static/layui/layui.js"></script>
+    <script src="/static/js/register.js"></script>
+</head>
+<body>
+<div>
+    <div class="register-head">
+        用户注册
+    </div>
+    <form class="layui-form" id="register-form">
+        <div class="">
+            <input class="register-input" type="text" name="userName" id="userName" value="" placeholder="输入用户名"
+                   autocomplete="off">
+            <span class="hint-span username-hint">用户名不能为空</span>
+        </div>
+        <!-- 密码提示 -->
+        <div class="pwdtip-div" style="display:none">
+            <span class="pwdtip-sp">长度为8~14个字符</span>
+            <span class="pwdtip-sp">包含大小写字母、数字、特殊字符或下划线</span>
+            <span class="pwdtip-sp">不允许有空格、中文</span>
+        </div>
+        <!-- 密码 -->
+        <div class="">
+            <input class="register-input" type="password" name="password" id="password" value="" placeholder="输入密码"
+                   autocomplete="off">
+            <span class="pwdtip-span">
+                <img class="pwdtip-img" src="/static/images/pwdtip.png" alt="">
+            </span>
+
+            <span class="hint-span password-hint">密码不能为空</span>
+        </div>
+        <!-- 确认密码 -->
+        <div class="">
+            <input class="register-input" type="password" name="affirmPassword" id="affirmPassword" value=""
+                   placeholder="确认密码" autocomplete="off">
+            <span class="hint-span affirmPassword-hint">确认密码不能为空</span>
+        </div>
+        <!-- 真实姓名 -->
+        <div class="">
+            <input class="register-input" type="text" name="realName" id="realName" value=""
+                   placeholder="真实姓名" autocomplete="off">
+            <span class="hint-span staffName-hint">真实姓名不能为空</span>
+        </div>
+        <!-- 性别 -->
+        <div class="">
+            <select class="register-input" name="gender" id="gender" lay-verify="required" autocomplete="off">
+                <option value="">选择性别</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+            <span class="hint-span gender-hint">性别不能为空</span>
+        </div>
+        <!-- 联系方式 -->
+        <div class="">
+            <input class="register-input" type="text" name="phone" id="phone" value=""
+                   placeholder="联系方式" autocomplete="off">
+            <span class="hint-span phone-hint">联系方式不能为空</span>
+        </div>
+        <!-- 出生日期 -->
+        <div class="">
+            <input type="text" class="register-input layui-input" name="birth" id="birth"
+                   placeholder="选择出生日期" autocomplete="off">
+            <span class="hint-span birth-hint">出生日期不能为空</span>
+        </div>
+
+        <div id="">
+            <input class="register" type="button" value="注册" onclick="user_register()">
+        </div>
+    </form>
+</div>
+</body>
+</html>

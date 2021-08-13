@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjw.mapper.UserMapper">
+    <!-- 结果集 -->
+    <resultMap id="userMap" type="com.wjw.pojo.User">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="username" property="userName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="realname" property="realName" jdbcType="VARCHAR"/>
+        <result column="gender" property="gender" jdbcType="CHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="birth" property="birth" jdbcType="DATE"/>
+        <result column="role_id" property="roleId" jdbcType="INTEGER"/>
+        <association property="role" javaType="com.wjw.pojo.Role">
+            <id column="id" property="id"/>
+            <result column="role_name" property="roleName"/>
+        </association>
+    </resultMap>
+
+    <!-- 根据用户名密码查询用户 -->
+    <select id="selectUserByUserName" resultMap="userMap">
+        select *
+        from user
+        where username = #{userName}
+    </select>
+
+    <!-- 查询所有用户信息 -->
+    <select id="getUser" resultMap="userMap">
+        select *
+        from user u
+        join role r
+        on u.role_id = r.id
+    </select>
+
+    <!-- 插入用户 -->
+    <insert id="insUser" parameterType="com.wjw.pojo.User">
+        insert into User
+        values (default, #{userName}, #{password}, #{realName}, #{gender}, #{phone},
+                #{birth}, #{roleId})
+    </insert>
+
+    <!-- 用户查重 -->
+    <select id="selectRepeatUser" resultType="java.lang.Integer">
+        select count(*) from user
+        <where>
+            <if test="userName != null and userName != ''">
+                and username = #{userName}
+            </if>
+            <if test="id != null and id != ''">
+                and id &lt;&gt; #{id}
+            </if>
+        </where>
+    </select>
+</mapper>

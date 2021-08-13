@@ -1,0 +1,95 @@
+.register-head {
+    font-weight: bold;
+    width: 65px;
+    margin: 0 auto;
+}
+.register-input {
+    height: 40px;
+    width: 335px;
+    border-radius: 4px;
+    border: 1px solid #E0E0E0;
+    margin: 30px auto 0 auto;
+    display: inherit;
+    outline: none;
+    padding: 0 10px;
+    box-sizing: inherit;
+}
+.register-input:focus {
+    border: 1px solid #2e58ff;
+}
+.register {
+    width: 360px;
+    height: 50px;
+    background: #2e58ff;
+    border-radius: 25px;
+    border: rgba(255, 255, 255, 0.5) 1px solid;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: .8;
+    margin: 30px auto 0 auto;
+    display: inherit;
+}
+.register:hover {
+    opacity: 1;
+}
+.hint-span {
+    color: red;
+    margin-left: 48px;
+    margin-top: 2px;
+    position: absolute;
+    display: none;
+    font-size: 12px;
+}
+.layui-input {
+    height: 40px;
+    width: 335px;
+    border-radius: 4px;
+    border: 1px solid #E0E0E0;
+    margin: 30px auto 0 auto;
+    display: inherit;
+    outline: none;
+    padding: 0 10px !important;
+    box-sizing: inherit;
+}
+.layui-input:focus {
+    border: 1px solid #2e58ff !important;
+}
+#layui-laydate1 {
+    left: 50px !important;
+}
+.layui-edge {
+    right: 60px !important;
+}
+.layui-form-select dl {
+    left: 50px !important;
+    top: 45px !important;
+    min-width: 355px !important;
+}
+.pwdtip-span {
+    position: absolute;
+    top: 133px;
+    right: 60px;
+}
+.pwdtip-span img {
+    height: 16px;
+}
+
+.pwdtip-div {
+    width: 257px;
+    height: 75px;
+    /*border: 1px solid red;*/
+    background: url(/static/images/check-pwd-bg.png) no-repeat;
+    background-size: 257px 75px;
+    position: absolute;
+    top: 42px;
+    right: 53px;
+    font-size: 12px;
+}
+
+.pwdtip-sp {
+    display: inherit;
+    color: #FFFFFF;
+    margin-top: 5px;
+    margin-left: 5px;
+}

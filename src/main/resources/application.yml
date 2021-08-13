@@ -1,0 +1,40 @@
+spring:
+  # 数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wjw?useSSL=false&serverTimezone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+  # MVC
+  mvc:
+    static-path-pattern: /static/**
+  # 静态文件
+  resources:
+    static-locations: classpath:/static/
+#  thymeleaf:
+#    prefix: classpath:/templates/views/in
+
+# 端口
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 1800s
+
+
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  # 别名
+  type-aliases-package: com.wjw.pojo
+
+# 分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+
+#logging:
+#  config: classpath:log4j.properties

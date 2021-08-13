@@ -1,0 +1,147 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background-image: url("/static/images/reg_bg_min.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.text1 {
+    width: 170px;
+    height: 50px;
+    color: #fff;
+    margin-top: 260px;
+    margin-left: 200px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.text2 {
+    width: 300px;
+    height: 40px;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 200px;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+.form-info {
+    width: 480px;
+    height: 525px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    bottom: 0px;
+    right: 140px;
+}
+#welcome {
+    width: 480px;
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 55px;
+    font-size: 36px;
+    color: #000;
+    font-weight: bold;
+}
+#old-account {
+    width: 480px;
+    height: 20px;
+    font-size: 14px;
+    color: #9B9B9B;
+    float: left;
+    margin-left: 40px;
+}
+#regis {
+    color: #2e58ff;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: .8;
+}
+#regis:hover {
+    opacity: 1;
+}
+.form {
+    width: 480px;
+    height: 40px;
+    margin-left: 40px;
+}
+.form1 {
+    /*margin-top: 90px;*/
+}
+.form2 {
+    margin-top: 35px;
+}
+label {
+    width: 58px;
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+.label-psw {
+    letter-spacing: 15px;
+}
+.input {
+    height: 40px;
+    /*margin-bottom: 15px;*/
+    border-radius: 4px;
+    border: 1px solid #E0E0E0;
+    background-color: #fff;
+    width: 335px;
+    margin-left: -5px;
+    outline: none;
+    padding: 0 15px;
+}
+.input:focus {
+    border: 1px solid #2e58ff !important;
+}
+#register {
+    width: 480px;
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 35px;
+    font-size: 36px;
+    color: #000;
+    font-weight: bold;
+}
+.register {
+    width: 400px;
+    height: 50px;
+    background: #2e58ff;
+    border-radius: 25px;
+    border: rgba(255, 255, 255, 0.5) 1px solid;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    opacity: .8;
+}
+.register:hover {
+    opacity: 1;
+}
+.bk-icon:hover {
+    cursor: pointer;
+}
+.layui-layer-title {
+    background: #fff !important;
+    border-bottom: none !important;
+    cursor: inherit !important;
+}
+.layui-layer-resize {
+    cursor: inherit !important;
+}
+.hint-span {
+    display: none;
+    color: red;
+    margin-left: 60px;
+}
+.err-span {
+    display: inherit;
+    width: 115px;
+    height: 18.5px;
+    margin: 50px auto 20px auto;
+    color: red;
+}

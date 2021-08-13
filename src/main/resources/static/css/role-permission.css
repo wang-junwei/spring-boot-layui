@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+.role-name {
+
+}
+.menu-div {
+    width: 200px;
+    float: right;
+    height: 100%;
+    overflow: auto;
+}
+.eleTree {
+    margin-top: 20px;
+}
+.role-name {
+    height: 30px;
+    width: 200px;
+    border: 1px solid #2e58ff;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    padding-left: 10px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+.eleTree-node-content-icon .layui-icon:hover {
+    cursor: pointer;
+}

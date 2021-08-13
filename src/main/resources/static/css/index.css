@@ -1,0 +1,24 @@
+html, body, .div {
+    height: 100%;
+}
+.head-div {
+    height: 50px;
+    background: #001529;
+}
+.main-body {
+    height: calc(100% - 50px);
+    /*border: 1px solid red;*/
+}
+.nav-div {
+    float: left;
+    height: 100%;
+    width: 230px;
+    /*border: 1px solid blue;*/
+    background: #393D49;
+}
+.main {
+    float: right;
+    height: 100%;
+    width: calc(100% - 230px);
+    /*background: #00FF00;*/
+}

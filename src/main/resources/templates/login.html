@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>天上人间</title>
+
+        <link rel="icon" href="/static/images/favicon.png">
+        <link href="/static/bk/bk.css" rel="stylesheet">
+        <link href="/static/bk/iconfont.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/login.css">
+        <link rel="stylesheet" href="/static/layui/css/layui.css">
+        <script src="/static/js/jquery-3.4.1.min.js"></script>
+        <script src="/static/layui/layui.js"></script>
+        <script src="/static/js/register.js"></script>
+        <script src="/static/js/login.js"></script>
+
+    </head>
+    <body>
+        <div style="padding:1px">
+            <div class="text1">愿天堂</div>
+            <div class="text2">没有程序BUG</div>
+
+            <div class="form-info">
+                <form id="login-form">
+                    <div id="welcome">欢迎登录</div>
+                    <div id="old-account">没有帐号？
+                        <a onclick="user_register_page()" id="regis">注册</a>
+                    </div>
+
+                    <span class="err-span"></span>
+
+                    <!-- 表单开始 -->
+                    <div class="form form1">
+
+                        <label for="userName" class="">用户名</label>
+                        <input type="text" id="userName" name="userName" placeholder="请输入用户名" class="input input1"
+                               autocomplete="off">
+                        <span class="hint-span username-hint">用户名不能为空</span>
+                    </div>
+                    <!-- 密码 -->
+                    <div class="form form2">
+                        <label for="pwd" class="label-psw">密码</label>
+                        <input type="password" id="pwd" name="password" placeholder="请输入密码" class=" input input1"
+                               autocomplete="off">
+                        <i class="bk-icon icon-eye-slash" style="position:relative;right:30px;top:2px;" onmousedown="show_pwd(this)"
+                        onmouseup="mouseup(this)"></i>
+                        <span class="hint-span pwd-hint">密码不能为空</span>
+                    </div>
+                    <!-- 记住密码 -->
+                    <div class="form form2" style="width:100px;margin-left:98px;">
+                        <input type="checkbox" id="remember" name="remember" value="yes"/>
+                        <label for="remember" class="" style="position:relative;top:-2px">记住密码</label>
+                    </div>
+                    <!-- 登录 -->
+                    <div id="register" style="margin-top:0">
+                        <input id="login-btn" class="register" type="button" value="登录" onclick="doLogin()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

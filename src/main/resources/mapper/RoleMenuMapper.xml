@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjw.mapper.RoleMenuMapper">
+    <!-- 查询用户有权限的二级菜单 -->
+    <select id="selectSecondMenuByUser" resultType="com.wjw.pojo.Menu">
+        SELECT *
+        FROM menu m
+        join role_menu rm
+        on m.id = rm.menu_id
+        where rm.role_id = #{roleId} and m.pid &lt;&gt; 0
+    </select>
+
+    <!-- 删除角色权限 -->
+    <delete id="deleteRoleMenuByRoleId">
+        delete from role_menu where role_id = #{roleId}
+    </delete>
+
+    <!-- 插入权限 -->
+    <insert id="insertRoleMenu">
+        insert into role_menu values
+        <foreach collection="roleMenuList" item="roleMenu" separator=",">
+            (default, #{roleMenu.roleId}, #{roleMenu.menuId}, #{roleMenu.sort})
+        </foreach>
+    </insert>
+
+    <select id="selectPermissionByRoleId" resultType="integer">
+        select count(*) from role_menu where role_id = #{roleId}
+    </select>
+</mapper>

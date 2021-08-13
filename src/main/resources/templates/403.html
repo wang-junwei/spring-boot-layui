@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>无权限</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+        html, body {
+            height: calc(100% - 1px);
+            background-color: #F1F1F1;
+        }
+        .body {
+            margin: 100px auto 0 auto;
+            width: 1274px;
+            height: 697px;
+            background: url(/static/images/nopermissions.jpg) no-repeat center;
+            position: relative;
+        }
+        a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #2e58ff;
+            opacity: .8;
+        }
+        a:hover {
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body style="padding: 1px">
+    <div class="body">
+        <a href="/logout" style="position:absolute;right:420px;top:215px;">返回登录</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjw.mapper.RoleMapper">
+
+    <resultMap id="roleMap" type="com.wjw.pojo.Role">
+        <id column="id" property="id"/>
+        <result column="role_name" property="roleName"/>
+    </resultMap>
+
+    <select id="selectAllRole" resultMap="roleMap">
+        select * from role
+        <where>
+            id &lt;&gt; -1
+            <if test="roleName != '' and roleName != null">
+                <bind name="roleName" value="'%'+roleName+'%'"/>
+                and role_name like #{roleName}
+            </if>
+        </where>
+    </select>
+
+</mapper>
