@@ -14,9 +14,11 @@ import java.util.List;
 public interface UserMapper {
     /**
      * 获取用户
+     * @param uerName 用户名
+     * @param realName 姓名
      * @return List
      */
-    List<User> getUser();
+    List<User> getUser(@Param("userName") String uerName, @Param("realName") String realName);
 
     /**
      * 插入用户

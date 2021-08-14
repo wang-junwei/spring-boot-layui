@@ -18,11 +18,13 @@ public interface UserService {
 
     /**
      * 获取用户
+     * @param userName 用户名
+     * @param realName 姓名
      * @param page 页码
      * @param pageSize 条数
      * @return list
      */
-    ResultJson getUser(Integer page, Integer pageSize);
+    ResultJson getUser(String userName, String realName, Integer page, Integer pageSize);
 
     /**
      * 用户查重
