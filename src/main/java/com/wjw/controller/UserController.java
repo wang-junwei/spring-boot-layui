@@ -91,9 +91,9 @@ public class UserController {
      */
     @PostMapping("/getUser")
     @ResponseBody
-    public ResultJson getUser(@RequestParam(defaultValue = "1") Integer page,
+    public ResultJson getUser(String userName, String realName,@RequestParam(defaultValue = "1") Integer page,
                               @RequestParam(defaultValue = "20") Integer limit) {
 
-        return userServiceImpl.getUser(page, limit);
+        return userServiceImpl.getUser(userName, realName, page, limit);
     }
 }

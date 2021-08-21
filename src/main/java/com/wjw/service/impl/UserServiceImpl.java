@@ -32,16 +32,18 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 分页查询用户
+     * @param userName 用户名
+     * @param realName 姓名
      * @param page 页码
      * @param pageSize 条数
      * @return resultJson
      */
     @Override
-    public ResultJson getUser(Integer page, Integer pageSize) {
+    public ResultJson getUser(String userName, String realName, Integer page, Integer pageSize) {
         // 开启分页
         PageHelper.startPage(page, pageSize);
         // 查询用户
-        List<User> users = userMapper.getUser();
+        List<User> users = userMapper.getUser(userName, realName);
         // 创建分页对象
         PageInfo<User> pageInfo = new PageInfo<>(users);
         // 获取数据总数
