@@ -33,7 +33,7 @@ function user_register_page() {
         type: 2,
         title: " ",
         shade: 0.5,
-        area: ["455px", "80%"],
+        area: ["455px", "77%"],
         content: ["/user/registerPage"],
     })
 }

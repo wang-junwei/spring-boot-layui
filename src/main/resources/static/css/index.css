@@ -22,3 +22,103 @@ html, body, .div {
     width: calc(100% - 230px);
     /*background: #00FF00;*/
 }
+.bk-nav-user {
+    color: #bfcbda !important;
+}
+
+.layui-nav-bar {
+    display: none !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+dd {
+    padding: 0 3px 0 3px;
+    line-height: 25px;
+}
+
+dd a:hover {
+    background: #e4effe !important;
+    color: #4693fe !important;
+}
+
+.layui-nav {
+    background: transparent !important;
+    right: -15px;
+}
+
+.layui-tab {
+    margin: 0 !important;
+}
+
+.layui-tab-brief > .layui-tab-more li.layui-this:after,
+.layui-tab-brief > .layui-tab-title .layui-this:after {
+    display: none !important;
+}
+
+.layui-tab-title {
+    border-color: #ccc;
+}
+
+.flex-subnavs a:hover {
+    cursor: pointer;
+}
+
+.layui-tab-content::-webkit-scrollbar {
+    width: 16px;
+    height: 8px;
+}
+
+.layui-tab-content::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    box-shadow: 13px 0 0 #A2A3A5 inset;
+}
+
+.layui-tab-title {
+    padding: 5px 10px;
+}
+
+.layui-tab-content {
+    padding: 15px !important;
+}
+
+.layui-tab-item {
+    /*min-height: 100%;
+    padding: 20px !important;
+    background-color: #fff;
+    i
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, .2);*/
+}
+
+.bk-nav-user:hover {
+    cursor: inherit;
+}
+
+.layui-tab-title li:hover {
+    color: #2e58ff;
+    border-color: #2e58ff;
+}
+
+.layui-tab-title li:hover i {
+    color: #2e58ff;
+    border-color: #2e58ff;
+}
+
+.slide-switch:hover {
+    cursor: pointer;
+}
+
+.project-name {
+    width: 200px;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to right, red, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+}

@@ -27,7 +27,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             String head = "x-requested-with";
             // 判断是否为ajax请求，如果是ajax请求，将session状态置为
             if (request.getHeader(head) != null && "XMLHttpRequest".equals(request.getHeader(head))) {
-                response.setHeader("sessionstatus", "out");
+                response.setHeader("sessionStatus", "timeout");
                 return false;
             }
             response.sendRedirect("/login");

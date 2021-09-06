@@ -1,11 +1,14 @@
 $(function () {
     //bk-sidebar_js_start
     //侧栏展开折叠
-    var bkSideBar = $(".bk-sidebar");
+    let bkSideBar = $(".bk-sidebar");
     $(".slide-switch").on("click", function () {
+        $(".slide-i").toggleClass("icon-indent icon-dedent");
         bkSideBar.toggleClass("slide-close slide-open");
         if (bkSideBar.hasClass("slide-close")) {
             $(".flex-subnavs").hide();
+        } else {
+            $(".second_menu.on").parent().parent().find(".flex-subnavs").slideToggle();
         }
     });
 
@@ -23,8 +26,8 @@ $(function () {
         $(this).children()[1].style.color = "#FFF";
 
         if ($(this).parents(".bk-sidebar").hasClass("slide-close")) return;
-        var _this = $(this).parent();
-        var _thisParent = _this.siblings();
+        let _this = $(this).parent();
+        let _thisParent = _this.siblings();
         if (_this.hasClass("pure-link")) {
             _this.addClass("open").siblings().removeClass("open");
             // 将所有二级菜单取消选中
@@ -52,7 +55,7 @@ $(function () {
 
     // 监听分辨率
     $(window).on('resize', function () {
-        var width = $(window).width();
+        let width = $(window).width();
         if (width > 800) {
             bkSideBar.removeClass("slide-close").addClass("slide-open");
         } else {

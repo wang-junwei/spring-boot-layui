@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/file-upload.js"></script>
+
+    <style>
+        label {
+            width: 100px !important;
+        }
+    </style>
+
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header" style="">
+            文件上传
+        </div>
+        <div class="layui-card-body" style="padding: 15px 15px;">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">标题：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="title" id="title" required lay-verify="required" placeholder="请输入标题"
+                               autocomplete="off" class="layui-input" style="width:150%">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">上传文件：</label>
+                    <div class="layui-input-inline" style="width: auto">
+                        <button type="button" class="layui-btn layui-btn-normal" id="upload-file">
+                            <i class="layui-icon">&#xe67c;</i>上传文件
+                        </button>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">描述：</label>
+                    <div class="layui-input-inline">
+                        <textarea style="width: 500px;height: 150px" name="desc" id="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left: 100px;">
+                        <button type="button" id="submit-file" class="layui-btn layui-btn-normal" lay-filter="formDemo">提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
