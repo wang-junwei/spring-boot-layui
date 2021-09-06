@@ -3,18 +3,18 @@ package com.wjw.controller;
 import com.wjw.commons.ResultJson;
 import com.wjw.pojo.Menu;
 import com.wjw.pojo.RoleMenu;
-import com.wjw.pojo.User;
 import com.wjw.service.MenuService;
 import com.wjw.service.RoleMenuService;
 import com.wjw.service.RoleService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.thymeleaf.spring5.context.SpringContextUtils;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: wjw
@@ -35,7 +35,7 @@ public class RoleController {
      *
      * @return role
      */
-    @GetMapping("/roleManager")
+    @PostMapping("/roleManager")
     public String roleManager() {
         return "/views/role";
     }
@@ -50,7 +50,8 @@ public class RoleController {
      */
     @PostMapping("/getRole")
     @ResponseBody
-    public ResultJson getRole(String roleName, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "20") Integer limit) {
+    public ResultJson getRole(String roleName, @RequestParam(defaultValue = "1") Integer page,
+                              @RequestParam(defaultValue = "20") Integer limit) {
         return roleServiceImpl.getAllRole(roleName, page, limit);
     }
 
@@ -73,12 +74,11 @@ public class RoleController {
      * 角色权限回显
      *
      * @param roleId  角色id
-     * @param request 请求
      * @return map
      */
     @PostMapping("/getRolePermission")
     @ResponseBody
-    public Map<String, Object> getAllMenu(@RequestBody String roleId, HttpServletRequest request) {
+    public Map<String, Object> getAllMenu(@RequestBody String roleId) {
         Map<String, Object> map = new HashMap<>(16);
         // 查询所有菜单
         List<Menu> menus = menuServiceImpl.getAllMenu();
@@ -126,7 +126,7 @@ public class RoleController {
 
             if (permissionByRoleId > 0) {
                 // 删除角色权限
-                Integer delRoleMenu = roleMenuServiceImpl.delRoleMenuByRoleId(roleId);
+                roleMenuServiceImpl.delRoleMenuByRoleId(roleId);
             }
 
             map.put("code", "200");
@@ -139,7 +139,7 @@ public class RoleController {
 
         if (permissionByRoleId > 0) {
             // 先删除角色权限
-            Integer delRoleMenu = roleMenuServiceImpl.delRoleMenuByRoleId(roleId);
+            roleMenuServiceImpl.delRoleMenuByRoleId(roleId);
         }
 
         List<RoleMenu> roleMenuList = new ArrayList<>();

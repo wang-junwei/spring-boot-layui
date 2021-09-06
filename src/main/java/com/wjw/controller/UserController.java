@@ -22,11 +22,20 @@ public class UserController {
     @Resource
     private UserService userServiceImpl;
 
+    /**
+     * 注册页面
+     * @return 页面
+     */
     @GetMapping("/registerPage")
     public String registerPage() {
         return "register";
     }
 
+    /**
+     * 用户注册
+     * @param user 用户对象
+     * @return map
+     */
     @PostMapping("/register")
     @ResponseBody
     public Map<String, Object> register(User user) {
@@ -48,7 +57,8 @@ public class UserController {
         }
 
         // 校验联系方式
-        String phoneRegex = "^(?:(?:\\+|00)86)?1(?:(?:3[\\d])|(?:4[5-7|9])|(?:5[0-3|5-9])|(?:6[5-7])|(?:7[0-8])|(?:8[\\d])|(?:9[1|8|9]))\\d{8}$";
+        String phoneRegex = "^(?:(?:\\+|00)86)?1(?:(?:3[\\d])|(?:4[5-7|9])|(?:5[0-3|5-9])|(?:6[5-7])|(?:7[0-8])|" +
+                            "(?:8[\\d])|(?:9[1|8|9]))\\d{8}$";
         String phoneRegex2 = "^\\d{3}-\\d{8}$|^\\d{4}-\\d{7}$";
 
         if (!Pattern.matches(phoneRegex, user.getPhone()) && !Pattern.matches(phoneRegex2, user.getPhone())) {
@@ -77,10 +87,10 @@ public class UserController {
     }
 
     /**
-     * 获取用户页面
+     * 用户管理页面
      * @return 用户页面
      */
-    @GetMapping("/userManager")
+    @PostMapping("/userManager")
     public String user() {
         return "/views/user";
     }

@@ -41,6 +41,15 @@ public class LoginController {
         return "login";
     }
 
+    /**
+     * 登录
+     * @param userName 用户名
+     * @param password 密码
+     * @param remember 记住密码
+     * @param request 请求
+     * @param response 相应
+     * @return map
+     */
     @PostMapping("/doLogin")
     @ResponseBody
     public Map<String, Object> doLogin(String userName, String password, String remember, HttpServletRequest request,
@@ -99,7 +108,6 @@ public class LoginController {
 
     /**
      * 主页面
-     *
      * @return index
      */
     @GetMapping("/index")
@@ -115,7 +123,7 @@ public class LoginController {
             return "403";
         }
 
-        request.setAttribute("menus",menus);
+        request.setAttribute("menus", menus);
         return "/views/index";
     }
 
@@ -131,6 +139,6 @@ public class LoginController {
         // 销毁session
         session.invalidate();
         // 跳转到登录页
-        return "login";
+        return "redirect:/login";
     }
 }

@@ -38,3 +38,13 @@ pagehelper:
 
 #logging:
 #  config: classpath:log4j.properties
+
+# vsftpd
+vsftpd:
+  host: 192.168.65.112
+  port: 21
+  username: ftpuser
+  password: 123456
+  bashPath: /home/ftpuser
+  filePath: /
+  nginx: http://192.168.65.112

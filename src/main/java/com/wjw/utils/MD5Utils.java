@@ -43,14 +43,16 @@ public class MD5Utils {
 		byte[] byteArray = new byte[charArray.length];
 
 		// 开始加密
-		for (int i = 0; i < charArray.length; i++)
+		for (int i = 0; i < charArray.length; i++) {
 			byteArray[i] = (byte) charArray[i];
+		}
 		byte[] digest = md5.digest(byteArray);
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < digest.length; i++) {
 			int var = digest[i] & 0xff;
-			if (var < 16)
+			if (var < 16) {
 				sb.append("0");
+			}
 			sb.append(Integer.toHexString(var));
 		}
 		return sb.toString();
@@ -74,14 +76,14 @@ public class MD5Utils {
 	 */
 	public static String getStrrMD5(String password) {
 
-		char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+		char[] hexDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 		try {
-			byte strTemp[] = password.getBytes("UTF-8");
+			byte[] strTemp = password.getBytes("UTF-8");
 			MessageDigest mdTemp = MessageDigest.getInstance("MD5");
 			mdTemp.update(strTemp);
-			byte md[] = mdTemp.digest();
+			byte[] md = mdTemp.digest();
 			int j = md.length;
-			char str[] = new char[j * 2];
+			char[] str = new char[j * 2];
 			int k = 0;
 			for (int i = 0; i < j; i++) {
 				byte byte0 = md[i];
