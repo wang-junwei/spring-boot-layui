@@ -3,7 +3,7 @@ layui.use(["table", "element", "laytpl"], function () {
     let tpl = layui.laytpl;
     let $ = layui.$;
 
-    //执行渲染
+    //执行渲染i
     table.render({
         elem: '#role_table',
         height: 500, //容器高度

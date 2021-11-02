@@ -41,7 +41,8 @@ dd {
 
 dd a:hover {
     background: #e4effe !important;
-    color: #4693fe !important;
+    color: #2e58ff !important;
+    cursor: pointer;
 }
 
 .layui-nav {
@@ -122,3 +123,7 @@ dd a:hover {
     -webkit-background-clip: text;
     color: transparent;
 }
+/*
+.layui-tab-title li:first-child i {
+    display: none;
+}*/

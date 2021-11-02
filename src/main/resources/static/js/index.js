@@ -1,14 +1,16 @@
 $.ajaxSetup({
     contentType: "application/x-www-form-urlencoded;charset=utf-8",
     complete: function (XMLHttpRequest, textStatus) {
-        let sessionStatus = XMLHttpRequest.getResponseHeader("sessionStatus"); // 通过XMLHttpRequest取得响应头，sessionstatus，
+        // 通过XMLHttpRequest取得响应头，sessionStatus，
+        let sessionStatus = XMLHttpRequest.getResponseHeader("sessionStatus");
         if (sessionStatus === "timeout") {
-            // 如果超时就处理 ，指定要跳转的页面
+            // 如果超时 ，跳转登录页面
             window.location.href = "/logout";
         }
     }
 });
 
+// 注销
 function logout() {
     window.location.href = "/logout";
 }

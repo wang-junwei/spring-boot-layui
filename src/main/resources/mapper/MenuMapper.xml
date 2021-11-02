@@ -6,6 +6,7 @@
     <resultMap id="menuMap" type="com.wjw.pojo.Menu">
         <id column="id" property="id"/>
         <result column="mname" property="mname"/>
+        <result column="index" property="index"/>
         <result column="label" property="label"/>
         <result column="url" property="url"/>
         <result column="pid" property="pid"/>
@@ -13,6 +14,7 @@
         <result column="checked" property="checked"/>
         <result column="disabled" property="disabled"/>
         <result column="sort" property="sort"/>
+        <result column="component" property="component"/>
     </resultMap>
 
     <!-- 查询用户权限菜单 -->

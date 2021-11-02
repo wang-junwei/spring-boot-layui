@@ -8,6 +8,7 @@ import com.wjw.utils.MD5Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -77,7 +78,7 @@ public class LoginController {
                 cookie2.setPath("/");
 
                 String rem = "yes";
-                if (rem.equals(remember)) {
+                if (rem.equals(remember) || "true".equals(remember)) {
                     cookie1.setMaxAge(30 * 60 * 24);
                     cookie2.setMaxAge(30 * 60 * 24);
                     cookie3.setMaxAge(30 * 60 * 24);
@@ -94,6 +95,7 @@ public class LoginController {
                 map.put("code", "200");
                 map.put("msg", "success");
                 map.put("url", "/index");
+                map.put("user", user);
                 return map;
             }
 
@@ -127,6 +129,12 @@ public class LoginController {
         return "/views/index";
     }
 
+    @PostMapping("/getMenu")
+    @ResponseBody
+    public List<Menu> getMenu(HttpServletRequest request, Integer roleId) {
+        return menuServiceImpl.getMenuByRoleId(roleId);
+    }
+
     /**
      * 注销登录
      * @param request 请求
@@ -141,4 +149,5 @@ public class LoginController {
         // 跳转到登录页
         return "redirect:/login";
     }
+
 }

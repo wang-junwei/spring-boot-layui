@@ -12,8 +12,8 @@ layui.use(["table", "element"], function () {
         },
         method: "post",
         page: true,
-        limit: 50,
-        limits: [50, 100, 200],
+        limit: 20,
+        limits: [20, 30, 50],
         cols: [[
             {checkbox: true},
             {field: 'id', title: 'ID', width: 80},
