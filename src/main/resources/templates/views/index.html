@@ -37,19 +37,18 @@
             line-height: 25px;
         }
 
-        dd a:hover {
-            background: #e4effe !important;
-            color: #4693fe !important;
-            cursor: pointer;
+        .layui-tab-title li {
+            border-radius: 0;
         }
+
     </style>
 
 </head>
 <body>
 <!-- 头部 -->
 <nav class="bk-horz-nav bk-horz-nav-min">
-    <div class="bk-nav-logo fl">
-        <img src="/static/images/hx_logo_red.png" style="height:35px;margin-left:-25px" alt="加载失败">
+    <div class="bk-nav-logo fl" style="width: 170px">
+        <img src="/static/images/hx_logo_red.png" style="height:35px;margin-left:-25px;display: none" alt="加载失败">
     </div>
     <div class="slide-switch" style="display:inline-block;overflow:hidden;">
         <i class="icon bk-icon icon-dedent f14 slide-i" style="margin-left:15px;font-size:20px;line-height:50px"></i>
@@ -115,8 +114,6 @@
         </div>
     </div>
 
-    <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
-
     <!-- 中间主页面 -->
     <div class="page-content" style="overflow:auto;">
         <div class="layui-tab layui-tab-brief" lay-filter="demo" lay-allowClose="true"
@@ -130,7 +127,7 @@
                     <a><cite>正文</cite></a>
                 </span>
             </div>-->
-            <ul class="layui-tab-title" style="height:auto;min-height: 40px;">
+            <ul class="layui-tab-title" style="height:auto;min-height: 49px;">
 
             </ul>
 

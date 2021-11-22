@@ -17,6 +17,6 @@ public class WebAppConfig implements WebMvcConfigurer {
         // 配置拦截路径以及放行路径，放行静态资源及登录路径
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").
                 excludePathPatterns("/static/**", "/login", "/doLogin", "/user/registerPage", "/user/register",
-                        "/logout", "/role/permission", "/role/getRolePermission");
+                        "/logout");
     }
 }

@@ -22,7 +22,7 @@ html, body {
     top: 50px;
     left: 50px;
     padding-left: 10px;
-    border-radius: 2px;
+    /*border-radius: 2px;*/
     font-size: 12px;
 }
 .eleTree-node-content-icon .layui-icon:hover {

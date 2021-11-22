@@ -11,10 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Author: wjw
@@ -52,7 +49,10 @@ public class RoleController {
     @ResponseBody
     public ResultJson getRole(String roleName, @RequestParam(defaultValue = "1") Integer page,
                               @RequestParam(defaultValue = "20") Integer limit) {
-        return roleServiceImpl.getAllRole(roleName, page, limit);
+        long time = System.currentTimeMillis();
+        ResultJson allRole = roleServiceImpl.getAllRole(roleName, page, limit);
+        System.out.println(System.currentTimeMillis() - time);
+        return allRole;
     }
 
     /**
@@ -80,6 +80,7 @@ public class RoleController {
     @ResponseBody
     public Map<String, Object> getAllMenu(@RequestBody String roleId) {
         Map<String, Object> map = new HashMap<>(16);
+        List<Integer> checkedList = new ArrayList<>();
         // 查询所有菜单
         List<Menu> menus = menuServiceImpl.getAllMenu();
 
@@ -98,12 +99,15 @@ public class RoleController {
                 // 用户有权限的菜单中是否包含二级菜单
                 if (menuByRoleId.contains(m)) {
                     m.setChecked("true");
+                    checkedList.add(m.getId());
                 }
             }
         }
 
         map.put("code", 0);
         map.put("data", menus);
+        map.put("checked", checkedList);
+
 
         return map;
     }
